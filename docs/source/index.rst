@@ -8,6 +8,8 @@ Welcome to ExamplePackage's documentation!
 
 This is the home page.
 
+Under construction...
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
