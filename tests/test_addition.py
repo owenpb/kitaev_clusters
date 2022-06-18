@@ -8,7 +8,7 @@ from example_package import example
 
 def test_addition():
 
-    assert example.add_one(3) == 4
+    assert example.add_one(3) == 5
 
 
 test_addition()
