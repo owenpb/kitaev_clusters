@@ -11,6 +11,10 @@ Example Package
     :alt: Tests
     :target: https://github.com/owenpb/example_package/actions
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :alt: Style
+   :target: https://github.com/psf/black
+
 
 
 This is the README for Example Package.
