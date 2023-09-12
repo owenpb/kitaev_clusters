@@ -3,7 +3,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../")
 
-from example_package import example
+from kitaev_clusters import example
 
 
 def test_addition():

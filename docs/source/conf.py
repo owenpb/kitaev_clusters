@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "ExamplePackage"
-copyright = "2022, Owen Bradley"
+project = "kitaev_clusters"
+copyright = "2023, Owen Bradley"
 author = "Owen Bradley"
 
 # The full version, including alpha/beta/rc tags

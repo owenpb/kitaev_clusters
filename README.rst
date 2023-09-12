@@ -1,5 +1,5 @@
 ===============
-Example Package
+kitaev_clusters: Python package for Kitaev model exact diagonalization
 ===============
 
 .. image:: https://readthedocs.org/projects/example-package/badge/?version=latest
@@ -17,4 +17,4 @@ Example Package
 
 
 
-This is the README for Example Package.
+This is the README for kitaev_clusters.
