@@ -1,5 +1,5 @@
 ===============
-kitaev_clusters: Python package for Kitaev model exact diagonalization
+kitaev_clusters: Python package for Exact Diagonalization of the Kitaev Model
 ===============
 
 .. image:: https://readthedocs.org/projects/kitaev-clusters/badge/?version=latest
