@@ -195,7 +195,3 @@ def get_neighbors(Lx, Ly, bond):
                 neighbors.append(z_pair)
 
     return neighbors
-
-
-def add_one(number):
-    return number + 1
