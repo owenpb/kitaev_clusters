@@ -63,4 +63,3 @@ test_x_neighbors()
 test_y_neighbors()
 test_z_neighbors()
 test_lattice_translations()
-
