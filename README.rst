@@ -30,3 +30,11 @@ Adding single-ion anisotropy to the model is also straightforward, with function
 
 This package was used to calculate the properties of the spin-1 Kitaev model with single ion anisotropy, on lattices with up to 18 sites, in our recent publication:
 `O. Bradley and R. R. P. Singh, Phys. Rev. B 105, L060405 (2022) <https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.L060405>`_
+
+Package Structure
+-----------------
+* **kitaev_clusters** contains the main code files.
+* **scripts** contains example scripts showing how the library can be used.
+* **docs** contains documentation files.
+* **tests** contains units tests of functions using the pytest framework.
+
