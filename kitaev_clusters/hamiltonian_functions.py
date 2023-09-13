@@ -4,7 +4,7 @@ from scipy import sparse
 import scipy.sparse.linalg
 from scipy.sparse import lil_matrix
 
-from symmetry_functions import ternary, ternary_pad, tern_to_base10
+from kitaev_clusters.symmetry_functions import ternary, ternary_pad, tern_to_base10
 
 
 def SmSm(state, j, k):

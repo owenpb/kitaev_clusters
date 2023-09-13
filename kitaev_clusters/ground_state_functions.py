@@ -3,7 +3,7 @@ import scipy
 from scipy import sparse
 import scipy.sparse.linalg
 
-from symmetry_functions import ternary, ternary_pad, tern_to_base10
+from kitaev_clusters.symmetry_functions import ternary, ternary_pad, tern_to_base10
 
 
 def ground_state(H, L, k=1, ncv=20):
