@@ -3,12 +3,12 @@ import os
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../")
 
-from kitaev_clusters import example
+from kitaev_clusters import symmetry_functions
 
 
 def test_addition():
 
-    assert example.add_one(3) == 4
+    assert symmetry_functions.add_one(3) == 4
 
 
 test_addition()
