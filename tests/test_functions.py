@@ -44,11 +44,23 @@ def test_z_neighbors():
     assert set(z_neighbors) == set(z_pairs)
 
 
+def test_lattice_translations():
+
+    translation_order_list = symmetry_functions.lattice_translations(Lx=3, Ly=2)
+    correct_translations = [[8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7],
+                            [4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3],
+                            [1, 0, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10],
+                            [9, 8, 11, 10, 1, 0, 3, 2, 5, 4, 7, 6],
+                            [5, 4, 7, 6, 9, 8, 11, 10, 1, 0, 3, 2]]
+
+    assert set(tuple(i) for i in translation_order_list) == set(tuple(i) for i in correct_translations)
+
+
 test_tern_to_base10()
 test_ternary()
 test_tern_to_base10()
 test_x_neighbors()
 test_y_neighbors()
 test_z_neighbors()
-
+test_lattice_translations()
 
