@@ -28,5 +28,5 @@ Since the components of the Hamiltonian are typically sparse matrices, we provid
 The package also contains a number of functions to calculate the ground state, energy, and bipartite entanglement entropy.
 Adding single-ion anisotropy to the model is also straightforward, with functions available for measuring of the local moment in the [1, 1, 1] direction.
 
-This package was used to calculate the properties of the spin-1 Kitaev model with single ion anisotropy on lattices of up to 18 sites, in our publication:
-`Phys. Rev. B 105, L060405 (2022) <https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.L060405>`_
+This package was used to calculate the properties of the spin-1 Kitaev model with single ion anisotropy, on lattices with up to 18 sites, in our recent publication:
+`O. Bradley and R. R. P. Singh, Phys. Rev. B 105, L060405 (2022) <https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.L060405>`_
