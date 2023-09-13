@@ -6,5 +6,5 @@ setup(
     author="Owen Bradley",
     author_email="owen.p.bradley@gmail.com",
     packages=find_packages(include=["kitaev_clusters", "kitaev_clusters.*"]),
-    install_requires=["numpy", "scipy", "matplotlib"],
+    install_requires=["numpy", "scipy"],
 )
