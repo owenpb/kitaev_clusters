@@ -12,14 +12,12 @@ Since the components of the Hamiltonian are typically sparse matrices, we provid
 The package also contains a number of functions to calculate the ground state, energy, and bipartite entanglement entropy.
 Adding single-ion anisotropy to the model is also straightforward, with functions available for measuring of the local moment in the [1, 1, 1] direction.
 
-.. automodule:: kitaev_clusters.symmetry_functions
-    :members:
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   api_doc
 
 Indices and tables
 ==================
