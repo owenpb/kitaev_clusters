@@ -9,13 +9,13 @@ def tern_to_base10(n):
     Parameters
     ----------
     n : str
-        A string representing a number in ternary, e.g. '101020122'.
+        A string representing a number in ternary, e.g. '1002'.
 
 
     Returns
     -------
     tot : int
-        The base-10 integer corresponding to the ternary string.
+        The base-10 integer corresponding to the ternary string, e.g. 29 for '1002'
 
     """
 
