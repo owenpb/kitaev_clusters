@@ -1,13 +1,8 @@
-.. ExamplePackage documentation master file, created by
-   sphinx-quickstart on Sat Jun 18 02:48:40 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 kitaev_clusters Documentation
-==========================================
+=============================
 
 Brief Overview
------------------
+--------------
 
 **kitaev_clusters** is a Python package designed for efficient Exact Diagonalization of the spin-1 Kitaev honeycomb model on finite-size clusters.
 This package contains a variety of functions which exploit the symmetries of the honeycomb lattice to effectively reduce the dimension of the Hilbert space.
@@ -20,13 +15,17 @@ This package was used to calculate the properties of the spin-1 Kitaev model wit
 
 Package Structure
 -----------------
-* **kitaev_clusters** contains the main code files.
+* **kitaev_clusters** contains the main code files. The main modules are:
+
+    1. symmetry_functions: a collection of functions which use lattice symmetries to reduce the effective Hilbert space dimension.
+    2. hamiltonian_functions: a collection of functions for efficient construction of the sparse matrix Hamiltonian.
+    3. ground_state_functions: a collection functions for obtaining ground states and measuring physical quantities.
 * **scripts** contains example scripts showing how the library can be used.
 * **docs** contains documentation files.
 * **tests** contains units tests of functions using the pytest framework.
 
 Requirements
------------------
+------------
 The code has been checked to run with the following versions:
 
 * Python 3.10
@@ -38,7 +37,7 @@ Required libraries can be installed with the following command (after downloadin
 ``pip install -r requirements.txt``
 
 Installation
------------------
+------------
 The package can be installed from source via git with the following command:
 
 ``git clone https://github.com/owenpb/kitaev_clusters``
@@ -46,15 +45,19 @@ The package can be installed from source via git with the following command:
 Units tests can be run using pytest after installation. Install pytest if needed using ``pip install pytest`` and execute the command ``pytest`` in the project directory to run all unit tests.
 
 
+Module Documentation
+==================
+Here you can find documentation for each function in the main modules:
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    api_doc
 
-Indices and tables
+
+Index and Search
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
