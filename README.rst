@@ -41,6 +41,7 @@ Package Structure
 Requirements
 -----------------
 The code has been checked to run with the following versions:
+
 * Python 3.10
 * NumPy 1.22.3
 * SciPy 1.7.3
