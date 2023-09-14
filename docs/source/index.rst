@@ -1,7 +1,13 @@
-kitaev_clusters Documentation
-=============================
+kitaev_clusters
+===============
 
-Brief Overview
+Welcome to the documentation for the **kitaev_clusters** library. Here you can find:
+
+* An overview of the library with reference paper
+* Package structure, requirements, and installation guide
+* API documentation of the **kitaev_clusters** library
+
+Overview
 --------------
 
 **kitaev_clusters** is a Python package designed for efficient Exact Diagonalization of the spin-1 Kitaev honeycomb model on finite-size clusters.
@@ -17,9 +23,9 @@ Package Structure
 -----------------
 * **kitaev_clusters** contains the main code files. The main modules are:
 
-    1. symmetry_functions: a collection of functions which use lattice symmetries to reduce the effective Hilbert space dimension.
-    2. hamiltonian_functions: a collection of functions for efficient construction of the sparse matrix Hamiltonian.
-    3. ground_state_functions: a collection functions for obtaining ground states and measuring physical quantities.
+ 1. symmetry_functions: a collection of functions which use lattice symmetries to reduce the effective Hilbert space dimension.
+ 2. hamiltonian_functions: a collection of functions for efficient construction of the sparse matrix Hamiltonian.
+ 3. ground_state_functions: a collection functions for obtaining ground states and measuring physical quantities.
 * **scripts** contains example scripts showing how the library can be used.
 * **docs** contains documentation files.
 * **tests** contains units tests of functions using the pytest framework.
@@ -46,8 +52,8 @@ Units tests can be run using pytest after installation. Install pytest if needed
 
 
 Module Documentation
-==================
-Here you can find documentation for each function in the main modules:
+====================
+Here you can find API documentation for each function in the main modules:
 
 .. toctree::
    :maxdepth: 2

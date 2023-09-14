@@ -8,6 +8,30 @@ from kitaev_clusters.symmetry_functions import ternary, ternary_pad, tern_to_bas
 
 def ground_state(H, L, k=1, ncv=20):
 
+    """
+    Finds the ground state psi_0 and the ground state energy E_0, by applying Lanczos algorithm to matrix Hamiltonian H.
+
+    Parameters
+    ----------
+    H : csr_matrix or lil_matrix
+        The full sparse matrix Hamiltonian.
+    L : int
+        The total number of lattice sites. Used to calculate the energy per site.
+    k : int, optional
+        Number of eigenvalues and eigenvectors desired. By default k=1 to find state only.
+    ncv : int, optional
+        Number of Lanczos vectors generated.
+
+
+    Returns
+    -------
+    E_0 : float
+        The ground state energy per site.
+    psi_0 : ndarray
+        The ground state, i.e. a 1d array with ndim complex coefficients.
+
+    """
+
     E, V = scipy.sparse.linalg.eigsh(H, k=k, which="SA", return_eigenvectors=True, ncv=ncv)
 
     # Get ground state energy per site (i.e. divide by L) and corresponding eigenvector
@@ -21,6 +45,26 @@ def ground_state(H, L, k=1, ncv=20):
 
 def s_squared(HD, L, psi_0):
 
+    """
+    Finds the expectation value of (Sx + Sy + Sz)^2 in the ground state (per site).
+
+    Parameters
+    ----------
+    HD : csr_matrix or lil_matrix
+        The sparse matrix HD corresponding to the single-ion anisotropy term in the Hamiltonian.
+    L : int
+        The total number of lattice sites. Used to calculate <(Sx + Sy + Sz)^2> per site.
+    psi_0 : ndarray
+        The ground state, i.e. a 1d array with ndim complex coefficients.
+
+
+    Returns
+    -------
+    Ss: float
+        The expectation value of (Sx + Sy + Sz)^2 in the ground state (per site).
+
+    """
+
     Ss = np.transpose(np.conjugate(psi_0)) @ HD @ psi_0
 
     Ss = np.real(Ss) / L  # Value per site
@@ -28,7 +72,32 @@ def s_squared(HD, L, psi_0):
     return Ss
 
 
-def entanglement_entropy(L, psi, kept_ints, state_map, n_unique_list):
+def entanglement_entropy(L, psi, state_map, n_unique_list):
+
+    """
+    Finds the bipartite entanglement entropy when the system is divided into two equal halves. Performs a
+    singular value decomposition (SVD) to obtain the singular values.
+
+    Parameters
+    ----------
+    L : int
+        The total number of lattice sites. Used to calculate <(Sx + Sy + Sz)^2> per site.
+    psi : ndarray
+        The state of the system, i.e. a 1d array with ndim complex coefficients. Typically the ground state psi_0.
+    state_map : ndarray
+        An array containing the representative state (in base-10) for each of the 3^L possible states. This is
+        the second value returned by the function get_representative_states.
+    n_unique_list : ndarray
+        An array containing the number of unique mirror states for each representative state. This is the third value
+        returned by the function get_representative_states.
+
+
+    Returns
+    -------
+    entropy: float
+        The bipartite entanglement entropy when the system is divided into two equal halves.
+
+    """
 
     M_dim = 3**(L//2)
 
