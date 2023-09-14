@@ -9,14 +9,32 @@ from kitaev_clusters.symmetry_functions import ternary, ternary_pad, tern_to_bas
 
 def SmSm(state, j, k):
 
-    # state: an L-digit ternary string e.g. "111100002222102100"
-    # j and k: sites to lower
-    # returns string with sites j and k lower
-    # NOTE: lowering the z component of spin = increasing the saved number from 0 (up) to 1 (down)
+    """
+    Applies spin lowering operator S_- to sites j and k, i.e. acts S_-(j) S_-(k) on a state.
 
-    state_rev = state[::-1]  # Reverse the string to get sites in order: 0, 1, 2, 3, 4, ...
+    Parameters
+    ----------
+    state : str
+        A string representing a state in ternary.
+    j : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site j to lower.
+    k : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site k to lower.
 
-    list_sites = list(state_rev)  # Turn string into a list, e.g. [0, 0, 1, 2, 0, 1, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1]
+
+    Returns
+    -------
+    new_state : str
+        The ternary representation of the new state after the spin lowering operator S_- has acted on sites j and k.
+
+    """
+
+    # Note: lowering the z-component of a spin = increasing the ternary number from e.g. 0 (ms=+1) to 1 (ms=0),
+    # or from 1 (ms=0) to 2 (ms=-1).
+
+    state_rev = state[::-1]
+
+    list_sites = list(state_rev)
 
     list_sites[j] = str(int(list_sites[j]) + 1)
     list_sites[k] = str(int(list_sites[k]) + 1)
@@ -30,14 +48,33 @@ def SmSm(state, j, k):
 
 def SmSp(state, j, k):
 
-    # a: an L-digit ternary string e.g. "111100002222102100"
-    # j and k: sites to lower and raise respectively
-    # returns string with site j lowered and k raised
-    # NOTE: lowering the z component of spin = increasing the saved number from 0 (up) to 1 (down)
+    """
+    Applies spin lowering operator S_- to site j, and spin raising operator S_+ to site k, i.e. acts S_-(j) S_+(k) on a state.
 
-    state_rev = state[::-1] # Reverse the string to get sites in order: 0, 1, 2, 3, 4, ...
+    Parameters
+    ----------
+    state : str
+        A string representing a state in ternary.
+    j : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site j to lower.
+    k : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site k to raise.
 
-    list_sites = list(state_rev) # Turn string into a list, e.g. [0, 0, 1, 2, 0, 1, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1]
+
+    Returns
+    -------
+    new_state : str
+        The ternary representation of the new state after the spin lowering operator S_- has acted on sites j, and
+         the spin raising operator S_+ has acted on site k.
+
+    """
+
+    # Note: lowering the z-component of a spin = increasing the ternary number from e.g. 0 (ms=+1) to 1 (ms=0),
+    # or from 1 (ms=0) to 2 (ms=-1).
+
+    state_rev = state[::-1]
+
+    list_sites = list(state_rev)
 
     list_sites[j] = str(int(list_sites[j]) + 1)
     list_sites[k] = str(int(list_sites[k]) - 1)
@@ -51,14 +88,33 @@ def SmSp(state, j, k):
 
 def SpSm(state, j, k):
 
-    # state: an L-digit ternary string e.g. "111100002222102100"
-    # j and k: sites to raise and lower respectively
-    # returns string with sites j raised and k lowered
-    # NOTE: lowering the z component of spin = increasing the saved number from 0 (up) to 1 (down)
+    """
+    Applies spin raising operator S_+ to site j, and spin lowering operator to site k, i.e. acts S_+(j) S_-(k) on a state.
 
-    state_rev = state[::-1]  # Reverse the string to get sites in order: 0, 1, 2, 3, 4, ...
+    Parameters
+    ----------
+    state : str
+        A string representing a state in ternary.
+    j : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site j to raise.
+    k : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site k to lower.
 
-    list_sites = list(state_rev)  # Turn string into a list, e.g. [0, 0, 1, 2, 0, 1, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1]
+
+    Returns
+    -------
+    new_state : str
+        The ternary representation of the new state after the spin raising operator S_+ has acted on sites j, and
+         the spin lowering operator S_- has acted on site k.
+
+    """
+
+    # Note: lowering the z-component of a spin = increasing the ternary number from e.g. 0 (ms=+1) to 1 (ms=0),
+    # or from 1 (ms=0) to 2 (ms=-1).
+
+    state_rev = state[::-1]
+
+    list_sites = list(state_rev)
 
     list_sites[j] = str(int(list_sites[j]) - 1)
     list_sites[k] = str(int(list_sites[k]) + 1)
@@ -72,14 +128,32 @@ def SpSm(state, j, k):
 
 def SpSp(state, j, k):
 
-    # state: an L-digit ternary string e.g. "111100002222102100"
-    # j and k: sites to raise
-    # returns string with sites j and k raised
-    # NOTE: lowering the z component of spin = increasing the saved number from 0 (up) to 1 (down)
+    """
+    Applies spin raising operator S_+ to sites j and k, i.e. acts S_+(j) S_+(k) on a state.
 
-    state_rev = state[::-1] # Reverse the string to get sites in order: 0, 1, 2, 3, 4, ...
+    Parameters
+    ----------
+    state : str
+        A string representing a state in ternary.
+    j : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site j to raise.
+    k : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site k to raise.
 
-    list_sites = list(state_rev)  # Turn string into a list, e.g. [0, 0, 1, 2, 0, 1, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1]
+
+    Returns
+    -------
+    new_state : str
+        The ternary representation of the new state after the spin raising operator S_+ has acted on sites j and k.
+
+    """
+
+    # Note: raising the z-component of a spin = decreasing the ternary number from e.g. 2 (ms=-1) to 1 (ms=0),
+    # or from 1 (ms=0) to 0 (ms=1).
+
+    state_rev = state[::-1]
+
+    list_sites = list(state_rev)
 
     list_sites[j] = str(int(list_sites[j]) - 1)
     list_sites[k] = str(int(list_sites[k]) - 1)
@@ -93,14 +167,27 @@ def SpSp(state, j, k):
 
 def SzSz(state, j, k):
 
-    # state: an L-digit ternary string e.g. "111100002222102100"
-    # j and k: sites upon which Sz_j and Sz_k operators act on
-    # returns coefficient which multiplies the resulting (identical) state
+    """
+    Applies Sz operator to sites j and k, and returns the coefficient multiplying the resultant (identical) state.
 
-    # E.g. for spin-1 system: Sz_5 Sz_6 |10211111> = (-1)(1) |10211111>, so coeff = -1 x 1 = -1.
-    # (Note "0" corresponds to a spin z-component m_s=1, "1" has m_s=0, and "2" has m_s=-1)
+    Parameters
+    ----------
+    state : str
+        A string representing a state in ternary.
+    j : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site j where we apply the Sz operator.
+    k : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site k where we apply the Sz operator.
 
-    state_rev = state[::-1]  # Reverse the string to get sites in order: 0, 1, 2, 3, 4, ...
+
+    Returns
+    -------
+    new_state : str
+        The ternary representation of the new state after the Sz operator has acted on sites j and k.
+
+    """
+
+    state_rev = state[::-1]
 
     sj = int(state_rev[j])
     sk = int(state_rev[k])
@@ -117,8 +204,23 @@ def SzSz(state, j, k):
 
 def Ss(state, i):
 
-    # state: an L-digit ternary string e.g. "111100002222102100"
-    # i: site at which Ss operator is applied
+    """
+    Applies squared spin operator (Sx + Sy + Sz)^2 to a site j, and returns the resultant states and their coefficients.
+
+    Parameters
+    ----------
+    state : str
+        A string representing a state in ternary.
+    j : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site j where we apply the operator (Sx + Sy + Sz)^2.
+
+
+    Returns
+    -------
+    list
+        A list of tuples of the form (state, coefficient), which result from applying the operator (Sx + Sy + Sz)^2 (at site j) to our initial state.
+
+    """
 
     rev_state = state[::-1]     # Reverse string so lattice site 0 at beginning
     list_revstate = list(rev_state)
@@ -159,6 +261,42 @@ def Ss(state, i):
 
 
 def construct_Hxx(L, x_neighbors, kept_ints, state_map, n_unique_list, filename, as_csr=True):
+
+    """
+    Constructs Hxx, i.e. the component of the Kitaev Hamiltonian which sums over all x-direction bonds of the
+    honeycomb lattice.
+
+    Parameters
+    ----------
+    L : int
+        The total number of lattice sites.
+    x_neighbors : list
+        A list of tuples of site pairs which each constitute an x-bond. This is returned by the function get_neighbors
+        with the parameter bond="x".
+    kept_ints : ndarray
+        An array of the base-10 integers corresponding to the representative states. This is the first value returned by
+        the function get_representative_states.
+    state_map : ndarray
+        An array containing the representative state (in base-10) for each of the 3^L possible states. This is
+        the second value returned by the function get_representative_states.
+    n_unique_list : ndarray
+        An array containing the number of unique mirror states for each representative state. This is the third value
+        returned by the function get_representative_states.
+    filename : str
+        Filename for the Hxx matrix which will be saved as a .npz file.
+    as_csr : bool
+        If True (default), the Hxx sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
+        (CSR) format before saving.
+
+
+    Returns
+    -------
+    Hxx : csr_matrix
+        The matrix Hxx in Compressed Sparse Row (CSR) format, i.e. the component of the Kitaev Hamiltonian which sums
+        over all x-direction bonds of the honeycomb lattice. It will have dimensions ndim x ndim, where ndim is the
+        number of representative states.
+
+    """
 
     ndim = kept_ints.size
 
@@ -231,6 +369,42 @@ def construct_Hxx(L, x_neighbors, kept_ints, state_map, n_unique_list, filename,
 
 def construct_Hyy(L, y_neighbors, kept_ints, state_map, n_unique_list, filename, as_csr=True):
 
+    """
+    Constructs Hyy, i.e. the component of the Kitaev Hamiltonian which sums over all y-direction bonds of the
+    honeycomb lattice.
+
+    Parameters
+    ----------
+    L : int
+        The total number of lattice sites.
+    y_neighbors : list
+        A list of tuples of site pairs which each constitute a y-bond. This is returned by the function get_neighbors
+        with the parameter bond="y".
+    kept_ints : ndarray
+        An array of the base-10 integers corresponding to the representative states. This is the first value returned by
+        the function get_representative_states.
+    state_map : ndarray
+        An array containing the representative state (in base-10) for each of the 3^L possible states. This is
+        the second value returned by the function get_representative_states.
+    n_unique_list : ndarray
+        An array containing the number of unique mirror states for each representative state. This is the third value
+        returned by the function get_representative_states.
+    filename : str
+        Filename for the Hyy matrix which will be saved as a .npz file.
+    as_csr : bool
+        If True (default), the Hxx sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
+        (CSR) format before saving.
+
+
+    Returns
+    -------
+    Hyy : csr_matrix
+        The matrix Hxx in Compressed Sparse Row (CSR) format, i.e. the component of the Kitaev Hamiltonian which sums
+        over all y-direction bonds of the honeycomb lattice. It will have dimensions ndim x ndim, where ndim is the
+        number of representative states.
+
+    """
+
     ndim = kept_ints.size
 
     Hyy = sparse.lil_matrix((ndim, ndim))
@@ -302,6 +476,36 @@ def construct_Hyy(L, y_neighbors, kept_ints, state_map, n_unique_list, filename,
 
 def construct_Hzz(L, z_neighbors, kept_ints, filename, as_csr=True):
 
+    """
+    Constructs Hzz, i.e. the component of the Kitaev Hamiltonian which sums over all z-direction bonds of the
+    honeycomb lattice.
+
+    Parameters
+    ----------
+    L : int
+        The total number of lattice sites.
+    z_neighbors : list
+        A list of tuples of site pairs which each constitute a z-bond. This is returned by the function get_neighbors
+        with the parameter bond="z".
+    kept_ints : ndarray
+        An array of the base-10 integers corresponding to the representative states. This is the first value returned by
+        the function get_representative_states.
+    filename : str
+        Filename for the Hzz matrix which will be saved as a .npz file.
+    as_csr : bool
+        If True (default), the Hzz sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
+        (CSR) format before saving.
+
+
+    Returns
+    -------
+    Hzz : csr_matrix
+        The matrix Hxx in Compressed Sparse Row (CSR) format, i.e. the component of the Kitaev Hamiltonian which sums
+        over all z-direction bonds of the honeycomb lattice. It will have dimensions ndim x ndim, where ndim is the
+        number of representative states.
+
+    """
+
     ndim = kept_ints.size
 
     Hzz = sparse.lil_matrix((ndim, ndim))
@@ -332,6 +536,39 @@ def construct_Hzz(L, z_neighbors, kept_ints, filename, as_csr=True):
 
 
 def construct_HD(L, kept_ints, state_map, n_unique_list, filename, as_csr=True):
+
+    """
+    Constructs HD, i.e. the component of the Hamiltonian which describes a single-ion anisotropy in the [1, 1, 1]
+    direction. The HD operator involves a sum over all sites i, that is: HD = D * sum_i (S_x^i + S_y^i + S_z^i)^2,
+    where D is the magnitude of the single-ion anisotropy.
+
+    Parameters
+    ----------
+    L : int
+        The total number of lattice sites.
+    kept_ints : ndarray
+        An array of the base-10 integers corresponding to the representative states. This is the first value returned by
+        the function get_representative_states.
+    state_map : ndarray
+        An array containing the representative state (in base-10) for each of the 3^L possible states. This is
+        the second value returned by the function get_representative_states.
+    n_unique_list : ndarray
+        An array containing the number of unique mirror states for each representative state. This is the third value
+        returned by the function get_representative_states.
+    filename : str
+        Filename for the HD matrix which will be saved as a .npz file.
+    as_csr : bool
+        If True (default), the HD sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
+        (CSR) format before saving.
+
+
+    Returns
+    -------
+    HD : csr_matrix
+        The matrix HD in Compressed Sparse Row (CSR) format, i.e. the component of the Hamiltonian which describes a
+        single-ion anisotropy in the [1, 1, 1] direction.
+
+    """
 
     ndim = kept_ints.size
 
@@ -380,6 +617,37 @@ def construct_HD(L, kept_ints, state_map, n_unique_list, filename, as_csr=True):
 
 
 def construct_hamiltonian(Kx, Ky, Kz, D, Hxx_file, Hyy_file, Hzz_file, HD_file):
+
+    """
+     Loads from file separate components of the Hamiltonian (Hxx, Hyy, Hzz, HD) and constructs the full Hamiltonian
+     matrix.
+
+     Parameters
+     ----------
+     Kx : float or int
+         The Kitaev coupling along x-bonds.
+     Ky : float or int
+         The Kitaev coupling along y-bonds.
+     Kz : float or int
+         The Kitaev coupling along z-bonds.
+     D : float or int
+         The magnitude of the single-ion anisotropy term, i.e. the coefficient which multiplies HD.
+     Hxx_file: .npz file
+         Saved file (in .npz format) for the Hxx matrix we wish to load.
+     Hyy_file: .npz file
+         Saved file (in .npz format) for the Hyy matrix we wish to load.
+     Hzz_file: .npz file
+         Saved file (in .npz format) for the Hzz matrix we wish to load.
+     HD_file: .npz file
+         Saved file (in .npz format) for the HD matrix we wish to load.
+
+
+     Returns
+     -------
+     H : csr_matrix
+         The full sparse matrix Hamiltonian corresponding to: H = (Kx * Hxx) + (Ky * Hyy) + (Kz * Hzz) + (D * HD)
+
+     """
 
     print('Loading Hxx... \n')
     Hxx = scipy.sparse.load_npz(Hxx_file)
