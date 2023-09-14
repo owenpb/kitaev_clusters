@@ -45,12 +45,14 @@ The code has been checked to run with the following versions:
 * NumPy 1.22.3
 * SciPy 1.7.3
 
-Required libraries can be installed with the following command (after downloading the `requirements.txt<https://github.com/owenpb/kitaev_clusters/blob/main/requirements.txt>`_ file from this repository):
+Required libraries can be installed with the following command (after downloading the `requirements.txt <https://github.com/owenpb/kitaev_clusters/blob/main/requirements.txt>`_ file from this repository):
+
 ``pip install -r requirements.txt``
 
 Installation
 -----------------
 The package can be installed from source via git with the following command:
+
 ``git clone https://github.com/owenpb/kitaev_clusters``
 
 Units tests can be run using pytest after installation. Install pytest if needed using ``pip install pytest`` and execute the command ``pytest`` in the project directory to run all unit tests.
