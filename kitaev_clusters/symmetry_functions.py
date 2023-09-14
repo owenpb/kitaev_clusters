@@ -3,6 +3,22 @@ import numpy as np
 
 def tern_to_base10(n):
 
+    """
+    Converts a ternary string to a base-10 integer.
+
+    Parameters
+    ----------
+    n : str
+        A string representing a number in ternary, e.g. '101020122'.
+
+
+    Returns
+    -------
+    tot : int
+        The base-10 integer corresponding to the ternary string.
+
+    """
+
     rev = n[::-1]
     tot = 0
 
