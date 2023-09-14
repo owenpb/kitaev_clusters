@@ -1,5 +1,5 @@
-kitaev_clusters
-===============
+kitaev_clusters Documentation
+=============================
 
 Welcome to the documentation for the **kitaev_clusters** library. Here you can find:
 
@@ -23,7 +23,7 @@ Package Structure
 -----------------
 * **kitaev_clusters** contains the main code files. The main modules are:
 
- 1. symmetry_functions: a collection of functions which use lattice symmetries to reduce the effective Hilbert space dimension.
+ 1. symmetry_functions: a collection of functions which use lattice symmetries to reduce the Hilbert space dimension.
  2. hamiltonian_functions: a collection of functions for efficient construction of the sparse matrix Hamiltonian.
  3. ground_state_functions: a collection functions for obtaining ground states and measuring physical quantities.
 * **scripts** contains example scripts showing how the library can be used.
@@ -51,13 +51,25 @@ The package can be installed from source via git with the following command:
 Units tests can be run using pytest after installation. Install pytest if needed using ``pip install pytest`` and execute the command ``pytest`` in the project directory to run all unit tests.
 
 
+
+Tutorial
+========
+Here we work through an example using the library to calculate the ground state properties of a 12-site lattice:
+
+.. toctree::
+   :maxdepth: 2
+
+   tutorial
+
+
+
+
 Module Documentation
 ====================
 Here you can find API documentation for each function in the main modules:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    api_doc
 

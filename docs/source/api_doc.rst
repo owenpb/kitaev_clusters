@@ -1,5 +1,5 @@
 API documentation of kitaev_clusters
-=============================
+====================================
 
 symmetry_functions module
 -------------------------
