@@ -205,7 +205,7 @@ def mirror_states(state, translation_order_list):
 def get_representative_states(L, translation_order_list, ints_filename='kept_ints', states_filename='state_map', nunique_filename='n_unique_list'):
 
     """
-    For a lattice with L sites and thus 3^L possible configurations, this function finds all the representative
+    For a lattice with L sites and therefore 3^L possible configurations, this function finds all the representative
     states we need to keep, thus reducing the Hilbert space dimension from 3^L to a much smaller number ndim.
 
 

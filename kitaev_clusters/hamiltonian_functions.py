@@ -10,7 +10,7 @@ from kitaev_clusters.symmetry_functions import ternary, ternary_pad, tern_to_bas
 def SmSm(state, j, k):
 
     """
-    Applies spin lowering operator S_- to sites j and k, i.e. acts S_-(j) S_-(k) on a state.
+    Applies spin lowering operator S- to sites j and k, i.e. acts S-(j) S-(k) on a state.
 
     Parameters
     ----------
@@ -25,7 +25,7 @@ def SmSm(state, j, k):
     Returns
     -------
     new_state : str
-        The ternary representation of the new state after the spin lowering operator S_- has acted on sites j and k.
+        The ternary representation of the new state after the spin lowering operator S- has acted on sites j and k.
 
     """
 
@@ -49,7 +49,7 @@ def SmSm(state, j, k):
 def SmSp(state, j, k):
 
     """
-    Applies spin lowering operator S_- to site j, and spin raising operator S_+ to site k, i.e. acts S_-(j) S_+(k) on a state.
+    Applies spin lowering operator S- to site j, and spin raising operator S+ to site k, i.e. acts S-(j) S+(k) on a state.
 
     Parameters
     ----------
@@ -64,8 +64,7 @@ def SmSp(state, j, k):
     Returns
     -------
     new_state : str
-        The ternary representation of the new state after the spin lowering operator S_- has acted on sites j, and
-         the spin raising operator S_+ has acted on site k.
+        The ternary representation of the new state after the spin lowering operator S- has acted on sites j, and the spin raising operator S+ has acted on site k.
 
     """
 
@@ -89,7 +88,7 @@ def SmSp(state, j, k):
 def SpSm(state, j, k):
 
     """
-    Applies spin raising operator S_+ to site j, and spin lowering operator to site k, i.e. acts S_+(j) S_-(k) on a state.
+    Applies spin raising operator S+ to site j, and spin lowering operator S- to site k, i.e. acts S+(j) S-(k) on a state.
 
     Parameters
     ----------
@@ -104,8 +103,7 @@ def SpSm(state, j, k):
     Returns
     -------
     new_state : str
-        The ternary representation of the new state after the spin raising operator S_+ has acted on sites j, and
-         the spin lowering operator S_- has acted on site k.
+        The ternary representation of the new state after the spin raising operator S+ has acted on site j, and the spin lowering operator S- has acted on site k.
 
     """
 
@@ -129,7 +127,7 @@ def SpSm(state, j, k):
 def SpSp(state, j, k):
 
     """
-    Applies spin raising operator S_+ to sites j and k, i.e. acts S_+(j) S_+(k) on a state.
+    Applies spin raising operator S+ to sites j and k, i.e. acts S+(j) S+(k) on a state.
 
     Parameters
     ----------
@@ -144,7 +142,7 @@ def SpSp(state, j, k):
     Returns
     -------
     new_state : str
-        The ternary representation of the new state after the spin raising operator S_+ has acted on sites j and k.
+        The ternary representation of the new state after the spin raising operator S+ has acted on sites j and k.
 
     """
 
@@ -218,7 +216,7 @@ def Ss(state, i):
     Returns
     -------
     list
-        A list of tuples of the form (state, coefficient), which result from applying the operator (Sx + Sy + Sz)^2 (at site j) to our initial state.
+        A list of tuples of the form (state, coefficient), which result from applying the operator (Sx + Sy + Sz)^2 to our initial state at site j.
 
     """
 
@@ -539,8 +537,8 @@ def construct_HD(L, kept_ints, state_map, n_unique_list, filename, as_csr=True):
 
     """
     Constructs HD, i.e. the component of the Hamiltonian which describes a single-ion anisotropy in the [1, 1, 1]
-    direction. The HD operator involves a sum over all sites i, that is: HD = D * sum_i (S_x^i + S_y^i + S_z^i)^2,
-    where D is the magnitude of the single-ion anisotropy.
+    direction. The HD operator involves a sum over all sites of D * (Sx + Sy + Sz)^2, where D is the magnitude of the
+    single-ion anisotropy.
 
     Parameters
     ----------
@@ -633,19 +631,19 @@ def construct_hamiltonian(Kx, Ky, Kz, D, Hxx_file, Hyy_file, Hzz_file, HD_file):
      D : float or int
          The magnitude of the single-ion anisotropy term, i.e. the coefficient which multiplies HD.
      Hxx_file: .npz file
-         Saved file (in .npz format) for the Hxx matrix we wish to load.
+         Saved file (in .npz format) for the Hxx matrix.
      Hyy_file: .npz file
-         Saved file (in .npz format) for the Hyy matrix we wish to load.
+         Saved file (in .npz format) for the Hyy matrix.
      Hzz_file: .npz file
-         Saved file (in .npz format) for the Hzz matrix we wish to load.
+         Saved file (in .npz format) for the Hzz matrix.
      HD_file: .npz file
-         Saved file (in .npz format) for the HD matrix we wish to load.
+         Saved file (in .npz format) for the HD matrix.
 
 
      Returns
      -------
      H : csr_matrix
-         The full sparse matrix Hamiltonian corresponding to: H = (Kx * Hxx) + (Ky * Hyy) + (Kz * Hzz) + (D * HD)
+         The full sparse matrix Kitaev Hamiltonian corresponding to H = (Kx * Hxx) + (Ky * Hyy) + (Kz * Hzz) + (D * HD).
 
      """
 
