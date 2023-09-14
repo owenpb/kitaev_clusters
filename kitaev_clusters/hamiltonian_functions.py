@@ -209,14 +209,14 @@ def Ss(state, i):
     ----------
     state : str
         A string representing a state in ternary.
-    j : int
-        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site j where we apply the operator (Sx + Sy + Sz)^2.
+    i : int
+        An integer in the range [0, L-1] (where L is the total number of lattice sites) denoting a site i where we apply the operator (Sx + Sy + Sz)^2.
 
 
     Returns
     -------
     list
-        A list of tuples of the form (state, coefficient), which result from applying the operator (Sx + Sy + Sz)^2 to our initial state at site j.
+        A list of tuples of the form (state, coefficient), which result from applying the operator (Sx + Sy + Sz)^2 to our initial state at site i.
 
     """
 
