@@ -282,7 +282,7 @@ def construct_Hxx(L, x_neighbors, kept_ints, state_map, n_unique_list, filename,
         returned by the function get_representative_states.
     filename : str
         Filename for the Hxx matrix which will be saved as a .npz file.
-    as_csr : bool
+    as_csr : bool, optional
         If True (default), the Hxx sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
         (CSR) format before saving.
 
@@ -389,7 +389,7 @@ def construct_Hyy(L, y_neighbors, kept_ints, state_map, n_unique_list, filename,
         returned by the function get_representative_states.
     filename : str
         Filename for the Hyy matrix which will be saved as a .npz file.
-    as_csr : bool
+    as_csr : bool, optional
         If True (default), the Hxx sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
         (CSR) format before saving.
 
@@ -490,7 +490,7 @@ def construct_Hzz(L, z_neighbors, kept_ints, filename, as_csr=True):
         the function get_representative_states.
     filename : str
         Filename for the Hzz matrix which will be saved as a .npz file.
-    as_csr : bool
+    as_csr : bool, optional
         If True (default), the Hzz sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
         (CSR) format before saving.
 
@@ -555,7 +555,7 @@ def construct_HD(L, kept_ints, state_map, n_unique_list, filename, as_csr=True):
         returned by the function get_representative_states.
     filename : str
         Filename for the HD matrix which will be saved as a .npz file.
-    as_csr : bool
+    as_csr : bool, optional
         If True (default), the HD sparse matrix is converted from List of Lists (LIL) format to Compressed Sparse Row
         (CSR) format before saving.
 
