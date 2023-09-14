@@ -42,7 +42,7 @@ def ternary(n):
     Returns
     -------
     str
-        A string representing an integer in ternary, e.g. "1002" for 29.
+        A string representing an integer in ternary.
 
     """
 
@@ -75,7 +75,7 @@ def ternary_pad(n, L):
     Returns
     -------
     str
-        A string of length L representing an integer in ternary, e.g. "000000001002" for n=29, L=12.
+        A string of length L representing an integer in ternary.
 
     """
 
@@ -101,7 +101,7 @@ def lattice_translations(Lx, Ly):
         Number of unit cells in the y-direction.
 
 
-     Returns
+    Returns
     -------
     translation_order_list : list
         A list of all equivalent site orderings generated via non-zero translations (with periodic boundary conditions).
@@ -159,7 +159,8 @@ def mirror_states(state, translation_order_list):
     translation_order_list : list
         A list of translationally equivalent site orderings. This is returned by the function lattice_translations.
 
-     Returns
+
+    Returns
     -------
     sorted_ints : list
         A list of the base-10 integers (in ascending order) representing the equivalent mirror states.
@@ -223,7 +224,8 @@ def get_representative_states(L, translation_order_list, ints_filename='kept_int
         Filename for the .npy file created which stores the number of unique mirror states for each
         representative state.
 
-     Returns
+
+    Returns
     -------
     kept_ints : ndarray
         An array of the base-10 integers corresponding to the representative states.
@@ -289,7 +291,8 @@ def get_neighbors(Lx, Ly, bond):
     bond : str
         A string which is either "x", "y", or "z" corresponding to the desired honeycomb bond direction.
 
-     Returns
+
+    Returns
     -------
     neighbors : list
         A list of tuples of site pairs which each constitute a bond of the chosen type.
