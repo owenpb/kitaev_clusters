@@ -5,6 +5,7 @@ Welcome to the documentation for the **kitaev_clusters** library. Here you can f
 
 * An overview of the library with reference paper
 * Package structure, requirements, and installation guide
+* Tutorial for spin-1 Kitaev model with single-ion anisotropy on a 12-site lattice
 * API documentation of the **kitaev_clusters** library
 
 Overview
@@ -14,7 +15,7 @@ Overview
 This package contains a variety of functions which exploit the symmetries of the honeycomb lattice to effectively reduce the dimension of the Hilbert space.
 Since the components of the Hamiltonian are typically sparse matrices, we provide functions for their efficient construction in a List of Lists (LIL) format, with conversion to a Compressed Sparse Row (CSR) format (if desired) for reduced memory needs.
 The package also contains a number of functions to calculate the ground state, energy, and bipartite entanglement entropy.
-Adding single-ion anisotropy to the model is also straightforward, with functions available for measuring of the local moment in the [1, 1, 1] direction.
+Adding single-ion anisotropy to the model is also straightforward, with functions available for measuring of the local moment in the :math:`[1, 1, 1]` direction.
 
 This package was used to calculate the properties of the spin-1 Kitaev model with single ion anisotropy, on lattices with up to 18 sites, in our recent publication
 `O. Bradley and R. R. P. Singh, Phys. Rev. B 105, L060405 (2022) <https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.L060405>`_ `(arXiv link) <https://arxiv.org/abs/2108.05040>`_, which provides further discussion of the model.
