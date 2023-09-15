@@ -26,7 +26,7 @@ Brief Overview
 This package contains a variety of functions which exploit the symmetries of the honeycomb lattice to effectively reduce the dimension of the Hilbert space.
 Since the components of the Hamiltonian are typically sparse matrices, we provide functions for their efficient construction in a List of Lists (LIL) format, with conversion to a Compressed Sparse Row (CSR) format (if desired) for reduced memory needs.
 The package also contains a number of functions to calculate the ground state, energy, and bipartite entanglement entropy.
-Adding single-ion anisotropy to the model is also straightforward, with functions available for measuring of the local moment in the :math:`[1, 1, 1]` direction.
+Adding single-ion anisotropy to the model is also straightforward, with functions available for measuring of the local moment in the [1, 1, 1] direction.
 
 This package was used to calculate the properties of the spin-1 Kitaev model with single ion anisotropy, on lattices with up to 18 sites, in our recent publication:
 `O. Bradley and R. R. P. Singh, Phys. Rev. B 105, L060405 (2022) <https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.L060405>`_
@@ -60,6 +60,8 @@ Units tests can be run using pytest after installation. Install pytest if needed
 
 Documentation
 -----------------
-To get started with using the package, see the latest version of the documentation here: `kitaev-clusters.readthedocs.io/en/latest/ <https://kitaev-clusters.readthedocs.io/en/latest/>`_
+To get started with using the package, see the latest version of the documentation here:
+
+`kitaev-clusters.readthedocs.io/en/latest/ <https://kitaev-clusters.readthedocs.io/en/latest/>`_
 
 The documentation includes a tutorial showing how to use the library to find the ground state properties of a spin-1 cluster with 12 sites. There is also full API documentation available for each module.
