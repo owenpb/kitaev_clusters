@@ -27,6 +27,7 @@ bipartite entanglement entropy, and the expectation value of the squared spin op
 ``ground_state``, ``s_squared``, and ``entanglement_entropy``:
 
 .. code-block::
+
     import numpy as np
     import scipy
     import gc
@@ -45,6 +46,7 @@ of the three bond directions of the honeycomb lattice. After this, we call the f
 sites which are equivalent via honeycomb lattice symmetries:
 
 .. code-block::
+
     L = 12 # Total number of lattice sites (L = Lx * Ly * 2)
     Lx = 3 # Unit cells in horizontal direction
     Ly = 2 # Unit cells in vertical direction
@@ -68,6 +70,7 @@ mirror states for each representative state. Finally, the function also returns 
 of the reduced Hilbert space.
 
 .. code-block::
+
     kept_ints, state_map, n_unique_list, ndim = get_representative_states(L, translation_order_list,
                                                                       ints_filename='kept_ints_L12',
                                                                       states_filename='state_map_L12',
@@ -82,6 +85,7 @@ lattice size, these arrays will be fixed and therefore only need to be calculate
 function ``get_representative_states`` will save these arrays in .npz format:
 
 .. code-block::
+
     kept_ints = np.load('kept_ints_L12.npy')
     state_map = np.load('state_map_L12.npy')
     n_unique_list = np.load('n_unique_list_L12.npy')
@@ -96,6 +100,7 @@ for reduced memory requirements (although this can be disabled by setting ``as_c
 matrix to be saved.
 
 .. code-block::
+
     Hxx = construct_Hxx(L, x_neighbors, kept_ints, state_map, n_unique_list, filename='Hxx_L12', as_csr=True)
     Hyy = construct_Hyy(L, y_neighbors, kept_ints, state_map, n_unique_list, filename='Hyy_L12', as_csr=True)
     Hzz = construct_Hzz(L, z_neighbors, kept_ints, filename='Hzz_L12', as_csr=True)
@@ -109,6 +114,7 @@ For a given lattice size, the matrices :math:`H_x`, :math:`H_y`, :math:`H_z`, an
 once then load then file when needed. Since these are sparse matrices saved in .npz format, we can load them as follows:
 
 .. code-block::
+
     Hxx = scipy.sparse.load_npz('Hxx_L12.npz')
     Hyy = scipy.sparse.load_npz('Hyy_L12.npz')
     Hzz = scipy.sparse.load_npz('Hzz_L12.npz')
@@ -123,6 +129,7 @@ is performed using the function ``construct_hamiltonian`` as shown in the next s
 Now we can specify values for the Kitaev couplings :math:`K_x`, :math:`K_y`, and :math:`K_z`, as well as the anisotropy parameter :math:`D`:
 
 .. code-block::
+
     Kx = 1  # Kitaev coupling along x-bonds
     Ky = 1  # Kitaev coupling along y-bonds
     Kz = 1  # Kitaev coupling along z-bonds
@@ -137,6 +144,7 @@ However, if you are not loading the components of the Hamiltonian from file, for
 :math:`H_y`, :math:`H_z`, and :math:`H_D` in your workspace or notebook, simply create the full Hamiltonian matrix as follows:
 
 .. code-block::
+
     H = (Kx * Hxx) + (Ky * Hyy) + (Kz * Hzz) + (D * HD)
 
 
@@ -148,6 +156,7 @@ the ground state energy per site ``E_0``. We can also pass the ground state ``ps
 ``entanglement_entropy`` to get the expectation value of :math:`(S^x + S^y + S^z)^2`, and the bipartite entanglement entropy:
 
 .. code-block::
+
     E_0, psi_0 = ground_state(H, L)
     Ss = s_squared(HD, L, psi_0)
     entropy = entanglement_entropy(L, psi_0, kept_ints, state_map, n_unique_list)
@@ -155,6 +164,7 @@ the ground state energy per site ``E_0``. We can also pass the ground state ``ps
 Saving these results to a .txt file is also straightforward:
 
 .. code-block::
+
     f = open('results.txt', 'w')
     f.write('D_111, E_gs per site, <(Sx + Sy + Sz)^2>, entropy \n')
     f.write(f'{D}, {E_0}, {Ss}, {entropy} \n')
@@ -164,6 +174,7 @@ If desired, you may want to saved the ground state ``psi_0`` after calling the f
 the entanglement entropy or :math:`\langle(S^x + S^y + S^z)^2\rangle`. This can be performed with the commands:
 
 .. code-block::
+
     # Saving ground state as .npy file:
     np.save('psi_0', psi_0)
 
@@ -178,6 +189,7 @@ If desired, you may want to free up memory after your calculations are complete.
 the ground state, this can be done as follows:
 
 .. code-block::
+
     del Hxx
     del Hyy
     del Hzz
