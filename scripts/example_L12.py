@@ -8,9 +8,6 @@
 
 import numpy as np
 import scipy
-from scipy import sparse
-import scipy.sparse.linalg
-from scipy.sparse import lil_matrix
 import gc
 import time
 

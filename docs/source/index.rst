@@ -54,7 +54,7 @@ Units tests can be run using pytest after installation. Install pytest if needed
 
 Tutorial
 ========
-Here we work through an example using the library to calculate the ground state properties of a 12-site lattice:
+Here we work through an example of using the library to calculate the ground state properties of the spin-1 Kitaev Hamiltonian with single-ion anisotropy on a 12-site lattice:
 
 .. toctree::
    :maxdepth: 2
