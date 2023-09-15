@@ -152,13 +152,10 @@ f1.write(f'{D}, {E_0}, {Ss}, {entropy} \n')
 f1.close()
 
 # Saving ground state:
-f2 = open('psi.txt', 'w')
-for i in range(len(psi_0)):
-    f2.write(f'{psi_0[i]}' + ' \n')
-f2.close()
+np.save('psi_0', psi_0)
 
 # If desired, can instead load a previously saved ground state for calculation of entanglement entropy via:
-# psi_loaded = np.loadtxt('psi.txt', dtype='complex')
+# psi_loaded = np.load('psi_0.npy')
 
 
 ###########################################################
