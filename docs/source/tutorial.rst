@@ -138,7 +138,9 @@ Now we can specify values for the Kitaev couplings :math:`K_x`, :math:`K_y`, and
 The function ``construct_hamiltonian`` can now be called, passing these parameters as arguments, to return the full Hamiltonian matrix :math:`H`.
 This function loads each of the components of the Hamiltonian from file, with the filenames of these .npz files also passed as arguments:
 
-H = construct_hamiltonian(Kx, Ky, Kz, D, 'Hxx_L12.npz', 'Hyy_L12.npz', 'Hzz_L12.npz', 'HD_L12.npz')
+.. code-block::
+
+    H = construct_hamiltonian(Kx, Ky, Kz, D, 'Hxx_L12.npz', 'Hyy_L12.npz', 'Hzz_L12.npz', 'HD_L12.npz')
 
 However, if you are not loading the components of the Hamiltonian from file, for example if you already have constructed the matrices :math:`H_x`,
 :math:`H_y`, :math:`H_z`, and :math:`H_D` in your workspace or notebook, simply create the full Hamiltonian matrix as follows:
