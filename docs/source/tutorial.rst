@@ -111,7 +111,7 @@ matrix to be saved.
 ------------------------------------
 
 For a given lattice size, the matrices :math:`H_x`, :math:`H_y`, :math:`H_z`, and :math:`H_D` are fixed. It is therefore recommended to only construct them
-once then load then file when needed. Since these are sparse matrices saved in .npz format, we can load them as follows:
+once then load from file when needed. Since these are sparse matrices saved in .npz format, we can load them as follows:
 
 .. code-block::
 
@@ -120,7 +120,7 @@ once then load then file when needed. Since these are sparse matrices saved in .
     Hzz = scipy.sparse.load_npz('Hzz_L12.npz')
     HD = scipy.sparse.load_npz('HD_L12.npz')
 
-However, if it is not necessary to load each component of the Hamiltonian separately if you just want to use them to construct the full Hamiltonian. That
+However, it is not necessary to load each component of the Hamiltonian separately if you just want to use them to construct the full Hamiltonian. That
 is performed using the function ``construct_hamiltonian`` as shown in the next step.
 
 7. Specifying couplings, anisotropy, and constructing full Hamiltonian
@@ -184,7 +184,7 @@ the entanglement entropy or :math:`\langle(S^x + S^y + S^z)^2\rangle`. This can 
     np.load('psi_0.npy')
 
 
-8. Freeing memory after calculations complete
+9. Freeing memory after calculations complete
 ---------------------------------------------
 
 If desired, you may want to free up memory after your calculations are complete. If you no longer need to store the matrices you have loaded or
