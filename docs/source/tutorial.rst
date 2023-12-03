@@ -1,7 +1,7 @@
 Tutorial: 12-site Kitaev cluster
 ================================
 
-Here we will work through an example of using the library to calculate the ground state properties of the spin-1 Kitaev Hamiltonian with single-ion anisotropy on a lattice with :math:`L=12`. sites
+Here we will work through an example of using the library to calculate the ground state properties of the spin-1 Kitaev Hamiltonian with single-ion anisotropy on a lattice with :math:`L=12` sites.
 The full Hamiltonian for this model is given by:
 
 .. math::
