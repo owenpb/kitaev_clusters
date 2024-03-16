@@ -42,7 +42,7 @@ bipartite entanglement entropy, and the expectation value of the squared spin op
 
 Each unit cell of the honeycomb lattice consists of two sites. For a lattice with :math:`L=12` sites, we can choose a geometry with :math:`L_x=3` unit cells
 in the x-direction, and :math:`L_y=2` unit cells in the y-direction. Then we will call the function ``get_neighbors`` to get a list of site pairs along each
-of the three bond directions of the honeycomb lattice. After this, we call the function ``translation_order_list`` to get a list of all permutations of :math:`L`
+of the three bond directions of the honeycomb lattice. After this, we call the function ``lattice_translations`` to get a list of all permutations of :math:`L`
 sites which are equivalent via honeycomb lattice symmetries:
 
 .. code-block::
