@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 
 project = "kitaev_clusters"
-copyright = "2023, Owen Bradley"
+copyright = "2024, Owen Bradley"
 author = "Owen Bradley"
 
 # The full version, including alpha/beta/rc tags
