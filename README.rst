@@ -14,6 +14,7 @@ Python package for Exact Diagonalization of the Kitaev Model
     :alt: Tests
     :target: https://github.com/owenpb/kitaev_clusters/actions
 
+
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :alt: Style
    :target: https://github.com/psf/black
@@ -29,7 +30,7 @@ The package also contains a number of functions to calculate the ground state, e
 Adding single-ion anisotropy to the model is also straightforward, with functions available for measuring of the local moment in the [1, 1, 1] direction.
 
 This package was used to calculate the properties of the spin-1 Kitaev model with single ion anisotropy, on lattices with up to 18 sites, in our recent publication:
-`O. Bradley and R. R. P. Singh, Phys. Rev. B 105, L060405 (2022) <https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.L060405>`_
+`O. Bradley and R. R. P. Singh, Phys. Rev. B 105, L060405 (2022) <https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.L060405>`_ `(arXiv) <https://arxiv.org/abs/2108.05040>`_
 
 Package Structure
 -----------------
